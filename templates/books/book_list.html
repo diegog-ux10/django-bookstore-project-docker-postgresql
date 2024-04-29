@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+
+{% block title %}Books{% endblock title %}
+
+{% block content %}
+    {% for book in book_list %}
+
+        {% comment %} Sin en metodo get absolte url {% endcomment %}
+
+        {% comment %} <div>
+            <h2><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a></h2>
+        </div> {% endcomment %}
+
+        <div>
+            <h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2>
+        </div>
+            
+    {% endfor %}
+{% endblock content %}
